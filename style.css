@@ -1,132 +1,101 @@
 body {
-  background-color: #3a6ea5; /* Color clásico de fondo de Windows */
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7d/Bliss_Windows_XP.png');
-  background-size: cover;
   margin: 0;
-  overflow: hidden;
-  font-family: "Tahoma", "Verdana", sans-serif;
-}
-
-/* Iconos de escritorio */
-.desktop-icons {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #4f7db8 0%,
+    #2f5fa7 50%,
+    #1e3f7f 100%
+  );
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.icon {
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: white;
-  text-shadow: 1px 1px 2px black;
-  width: 75px;
+  font-family: Tahoma, sans-serif;
 }
 
-.icon img {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 4px;
-}
-
-.icon span {
-  font-size: 11px;
-  text-align: center;
-}
-
-.icon:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: 1px dotted white;
-}
-
-/* Ventana estilo XP */
 .xp-window {
-  width: 350px;
+  width: 380px;
   background: #ece9d8;
-  border: 3px solid #0055e5;
-  border-radius: 8px 8px 0 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  border: 1px solid #0831d9;
+  box-shadow:
+    inset 0 0 0 1px #ffffff,
+    0 0 0 2px #7f9db9,
+    0 14px 30px rgba(0, 0, 0, 0.5);
 }
 
 .xp-titlebar {
-  background: linear-gradient(to bottom, #0058e4 0%, #3b8cf8 10%, #1e71f2 40%, #0058e4 100%);
+  height: 30px;
+  background: linear-gradient(
+    to bottom,
+    #5c8ee6 0%,
+    #245edc 100%
+  );
   color: white;
-  padding: 5px 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-weight: bold;
+  justify-content: space-between;
+  padding: 0 6px;
   font-size: 13px;
-  border-radius: 5px 5px 0 0;
 }
 
-.win-btn {
-  width: 21px;
-  height: 21px;
-  margin-left: 2px;
-  border: 1px solid white;
-  border-radius: 2px;
-  font-size: 10px;
-  font-weight: bold;
-  cursor: pointer;
+.xp-buttons span {
+  display: inline-block;
+  width: 16px;
+  height: 14px;
+  margin-left: 4px;
+  background: linear-gradient(#ffffff, #d6d3ce);
+  border: 1px solid #404040;
 }
-
-.close { background-color: #e81123; color: white; }
-.minimize, .maximize { background-color: #0058e4; color: white; }
 
 .xp-content {
-  padding: 20px;
+  padding: 18px;
   text-align: center;
 }
 
 .xp-image {
-  width: 100px;
-  margin-bottom: 20px;
+  max-width: 100%;
+  margin-bottom: 18px;
+  border-radius: 6px;
 }
 
-/* Botón TOCAME */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
 #play-btn {
-  background: linear-gradient(to bottom, #ffcc00, #ff9900);
-  border: 2px solid #8b4513;
-  padding: 10px 20px;
-  font-weight: bold;
+  font-family: Tahoma, sans-serif;
+  font-size: 15px;
+  padding: 10px 22px;
+  background: #000000;
+  color: #00ffcc;
+  border: 2px solid #00ffcc;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 5px;
+  box-shadow:
+    0 0 6px #00ffcc,
+    0 0 16px #00ffcc;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-#play-btn:active {
-  transform: scale(0.95);
+#play-btn:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 10px #00ffcc,
+    0 0 28px #00ffcc;
 }
 
-/* Barra de tareas */
-.taskbar {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(to bottom, #245edb 0%, #3f8cf3 9%, #245edb 18%, #245edb 92%, #1941a5 100%);
-  display: flex;
-  align-items: center;
-  z-index: 10;
+.arrow {
+  font-size: 22px;
+  color: #00ffcc;
+  animation: blink 1s infinite;
 }
 
-.start-button {
-  background: linear-gradient(to bottom, #388e3c, #4caf50);
-  padding: 0 15px;
-  color: white;
-  font-weight: bold;
-  font-style: italic;
-  border-radius: 0 10px 10px 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
 }
+
+
